@@ -1,0 +1,361 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Montserrat', sans-serif; 
+}
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family:'Montserrat', sans-serif; 
+    
+}
+a:hover {
+    color: #FFFC00;
+}
+#header {
+    box-sizing: border-box;
+    height: 60px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:  #000000;
+}
+#menu {
+    display: flex;
+    list-style: none;
+    gap: .5rem
+}
+#menu a {
+    display: block;
+    padding: .5rem;
+}
+#btn-mobile {
+    display: none;
+}
+
+@media (max-width: 600px) {
+        /*Menu Aberto*/
+    #menu {
+        background: #313131;
+        display: block;
+        position: absolute;
+        width: 100%;
+        top:60px;
+        right:0px;
+        height: 0px;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #nav.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a {
+        font-size: 1rem;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgb(201, 198, 198);
+
+    }
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+
+
+     /*Icone Menu*/
+    #hamburger {
+        color: white;
+        width: 20px;
+        border-top: 2px solid;
+    }
+    #hamburger::after, #hamburger::before {
+        content: '';
+        display:block;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+    #nav.active #hamburger::after {
+    background: red;
+    transform: rotate(-135deg);
+    top: -7px;
+    }
+    
+    #nav.active #hamburger::before{
+    background: red;
+    transform: rotate(135deg);
+
+    }
+
+
+       /*Pesquisa*/
+    #search-box{
+        position: flex;
+        background-color: #0000;
+        height: 100px;
+        padding: 10px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #FFFF;
+    font-size: 13px;
+    line-height: 40px;
+    width: 0;
+    transition: .5s;
+    }
+    
+    #search-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #0000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .5s;
+
+    }
+
+    #search-box:hover  #search-txt {
+        width:120px ;
+        padding: 0 6px;
+        place-content: right;
+
+    }
+
+    #search-box:hover > #search-btn {
+        background: #0000;
+    }
+            /*Icone User*/
+    #user {
+        width: 360px;
+        height: 40px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        cursor: pointer;
+        position: flex;
+        padding: 1rem;
+ 
+    }
+        /*Vitrine Menu*/
+    #tp-vt {
+        width: 40vh;
+        height: 40px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.5rem;
+        font-size: 1rem;
+
+
+    }
+        /* Bug Da Barra de Pesquisa"."*/
+    #bug {
+        width: 350vh;
+        height: 40px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        color: transparent;
+
+    }
+        /*Home BackGround*/
+    #Home {
+        background-image: url("imghome.JPG");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 86vh;
+
+    }
+        /*Home "CRUEG"*/
+    #crueg{
+        font-size: 6rem;
+        color: #E0E0E0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 70vh ;
+
+    }
+        /*Botão "FALE-ME MAIS"*/
+    #falem{ 
+        width: 25vh;
+        height: 7vh;
+        border-radius: 6px;
+        background: black;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        transition: .7s;
+
+    }
+    #falem:hover{
+        background: #f3f03cd7;
+        border: #f3f03cd7;
+    }
+        /*Texto "FALE-ME MAIS"*/
+    #conf {
+        color:#FFFFFF;
+        font-size: 2.25vh;
+        font-weight: bold;
+    }
+     /*Centralizar Botão "FALE-ME MAIS"*/
+    #meio{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+     /*Fundo imagem 2 background*/
+    #Serviços{
+        background-image: url("pag2.2.JPG");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 86.5vh;
+    }
+    /*Texto "Servicos"*/
+    #Serviços-Log {
+        font-size: 3rem;
+        color: #E0E0E0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 10vh ;
+    }
+    /*P configurado*/
+    p {
+        color: #E0E0E0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: 'Roboto Slab', serif;
+        font-size: 1.10rem;
+        height: 1.25rem;
+
+    }
+    /*textos encima do P*/
+    #maior {
+        color: #E0E0E0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 1.25rem;
+        height: 2.5rem;
+        font-weight: bold;
+    }
+        /*imagens-pag2*/
+    #client {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+    }
+        /*Texto "Acreditamos no mundo em 360º."*/
+    #pp{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.25rem;
+    }
+     /*Fundo imagem 3 background*/
+    #vitrine {
+        background-image: url("pag3.JPG");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    #vitras {
+        font-size: 2.5rem;
+        color: #000000;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 12vh ;
+    }
+    #itens1 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+    }
+    #itens2 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    #itens3 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    #Vidro{
+        padding: 2rem;
+    }
+    #footer{
+        background-image: url("footer.JPG");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #fin {
+        box-sizing: border-box;
+        height: 60px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+    #fut li {
+        display: inline;
+    }
+    #confmenu {
+        color: #E0E0E0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: 'Roboto Slab', serif;
+        font-size: 1.25rem;
+    }
+    #term {
+        font-size:0.9rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    #term:hover{
+        color: #FFFC00;
+    }
+    #insta{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+}
